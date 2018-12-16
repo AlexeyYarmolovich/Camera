@@ -169,6 +169,8 @@ class CameraVC: UIViewController {
         do {
             try trackingHandler.perform(trackingRequestsArray, on: cvPixelBuffer)
         } catch {
+          let er = error
+          print(er)
             print("trackingHandler fails trackingRequests, error: \(error.localizedDescription)")
             needTrackObservationsAsap = true
             trackingObservations = [:]
